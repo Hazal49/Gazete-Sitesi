@@ -1,0 +1,101 @@
+﻿body {
+    background-color: #e1e1e1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.box {
+    height: 1000px;
+    width: 1000px;
+    margin: auto;
+    margin-top: 5px;
+}
+a{
+    text-decoration:none;
+    color:#2a595c;
+}
+a:hover{
+    color:#589296;
+}
+.box .slider {
+        height: 100px;
+        width: 1000px;
+        float: left;
+        background-color: #2a595c;
+        margin-top: 5px;
+    }
+    .butonGorsel{
+        color:#fff;
+        background-color:#2a595c;
+        width:150px;
+        height:50px;
+        border:double;
+    }
+    .butonGorsel:hover{
+        background-color:rgba(42, 89, 92, 0.60);
+    }
+    .textboxGorsel{
+        height:50px;
+        width:300px;
+        border:1px groove #2a595c;
+       border-radius:10px;
+           
+    }
+    .fileUpload {
+    height: 60px;
+    width: 200px;
+    }
+            
+
+    .box .mybody {
+        width: 1000px;
+        height: auto;
+        float: left;
+        margin-top: 20px;
+         
+    }
+
+        .box .mybody .mybodyleft {
+            height: auto;
+            width: 270px;
+            float: left;
+            border: 1px dotted #2a595c;
+        }
+
+        .box .mybody .mybodyright {
+            height:auto;
+            width: 600px;
+            float: right;
+            border: 1px dotted #2a595c;
+            margin-right: 50px;
+        }
+
+.mybody .mybodyleft .bodytitle {
+    width: 100%;
+    height: 30px;
+    float: left;
+    background-color: #2a595c;
+    border: 1px dotted #2a595c;
+    color:white;
+    line-height:30px;
+}
+
+.mybody .mybodyleft .bodycontent {
+    width: 100%;
+    height: auto;
+    float: left;
+    border: 1px groove #2a595c;
+    background-color:#2a595c;
+}
+
+.footer {
+    width: 100%;
+    height: 40px;
+    float: left;
+    background-color: #2a595c;
+    margin-top: 20px;
+}

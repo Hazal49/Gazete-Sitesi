@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="MaysaGazete.admin.admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Admin Yönetim Paneli</title>
+    <link href="admin.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            height: 25px;
+            color:#2a595c;
+            background-color: #999999;
+            margin-top:3px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+       <div class="box">   
+            <div class="slider"></div>
+            <div class="mybody">
+                <div class="mybodyleft">
+                    <div class="bodytitle">MENÜLER</div>
+                    <div class="bodycontent">
+                        <div class="auto-style1" >&nbsp;&nbsp;&nbsp;<strong>&nbsp;&nbsp; <a href="kategoriler.aspx"> - Kategoriler</a></strong></div>
+                        <div class="auto-style1" >&nbsp;&nbsp;&nbsp;<strong>&nbsp;&nbsp; <a href="Haberler.aspx"> - Haberler</a></strong></div>
+                        <div class="auto-style1" >&nbsp;&nbsp;&nbsp;<strong>&nbsp;&nbsp; <a href="Yorumlar.aspx"> - Yorumlar</a></strong></div>
+                        <div class="auto-style1" >&nbsp;&nbsp;&nbsp;<strong>&nbsp;&nbsp; <a href="Mesajlar.aspx"> - Mesajlar</a></strong></div>
+                        <div class="auto-style1" >&nbsp;&nbsp;&nbsp;<strong>&nbsp;&nbsp; <a href="GununYemegiAdmin.aspx"> - Son Dakika</a></strong></div>     
+                        <div class="auto-style1" >&nbsp;&nbsp;&nbsp;<strong>&nbsp;&nbsp; <a href="GelenHaber.aspx"> - Sizden Gelenler</a></strong></div> 
+                        <div class="auto-style1" >&nbsp;&nbsp;&nbsp;<strong>&nbsp;&nbsp; <a href="HakkimizdaAdmin.aspx"> - Hakkımızda</a></strong></div>
+                        <div class="auto-style1" >&nbsp;&nbsp;&nbsp;<strong>&nbsp;&nbsp; <a href="defaultadmin.aspx"> - Çıkış</a></strong></div>
+                        
+                    </div>
+
+                </div>
+                <div class="mybodyright">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <div style="background-color:#aaaaaa">
+                        </div>
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div class="footer"></div>
+
+        </div>
+    </form>
+</body>
+</html>

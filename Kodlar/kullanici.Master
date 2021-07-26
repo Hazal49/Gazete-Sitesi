@@ -1,0 +1,150 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="kullanici.master.cs" Inherits="MaysaGazete.kullanici" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title> MAYSA GAZETESİ</title>
+    <link href="tasarim.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+  <%--  <script src="slaytjs/jquery.js"></script>
+    <script src="slaytjs/amazingslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="slaytjs/amazingslider-1.css">
+    <script src="slaytjs/initslider-1.js"></script>--%>
+     <style type="text/css">
+        .auto-style1 {
+            color: #FFFFCC; 
+            text-decoration: none;
+        } 
+        .arama{
+           float:right;
+           border-radius:5px;
+           background-color:#2c595a;
+           width:100px;
+           height:30px;
+           border:groove solid #3fb3ba;
+           color:#FFFFCC;
+           font-size:20px;
+           margin-top:10px;
+        }
+        .textArama{
+           float:right;
+           border-radius:5px; 
+           width:auto;
+           height:30px;
+           border:groove solid #3fb3ba;
+           color:#111;
+           font-size:15px;
+           margin-top:10px;
+           margin-right:7px;
+        }    
+        .slyt{
+            height:250px;
+            width:900px;            
+            text-align:center;
+            margin-top:20px;
+            margin-bottom:20px;
+            
+
+        }
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="box">
+               <div class="slider">
+                   <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                   <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                       
+                       <ContentTemplate>
+                           <asp:Timer ID="Timer1" runat="server" Interval="3000"></asp:Timer>                           
+                           <asp:Label ID="Label2" runat="server" Text="Label" CssClass="slyt"></asp:Label> 
+
+                       </ContentTemplate>
+                   </asp:UpdatePanel>
+               </div>
+
+           <div class="search">
+
+               <asp:Button ID="Button2" runat="server" Text="Ara" CssClass="arama" OnClick="Button2_Click" />
+
+               <asp:TextBox ID="txt_ara" runat="server" placeholder="  Arama yap" CssClass="textArama"></asp:TextBox>
+
+           </div>
+            <div class="menu" >
+                 <table style="width: 100%; background-color:#2c595a;height:100% ">
+                    <tr>
+                        <td style= "text-align: center; font-weight:bolder ; text-decoration:none"><a href="anasayfa.aspx"> <span class="auto-style1">ANASAYFA</span></a></td>
+                        <td style= "text-align: center; font-weight:bolder; text-decoration:none"><a href="sondakika.aspx"><span class="auto-style1">SON DAKİKA</span></a></td>
+                        <td style= "text-align: center; font-weight:bolder;text-decoration:none"><a href="sizdengelenler.aspx"><span class="auto-style1">HABER GÖNDER</span></a></td>
+                        <td style= "text-align: center; font-weight:bolder;text-decoration:none"><a href="hakkimizda.aspx"><span class="auto-style1">HAKKIMIZDA</span></a></td>
+                        <td style= "text-align: center; font-weight:bolder;text-decoration:none"><a href="iletisim.aspx"><span class="auto-style1">İLETİŞİM</span></a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="mybody">
+                <div class="mybodyleft">
+                    <div class="bodytitle"><strong>MENÜLER</strong></div>
+                    <div class="bodycontent">
+                         
+                        <asp:DataList ID="DataList1" runat="server" Width="100%">
+                            <ItemTemplate>
+                                    <table style="width: 200px; height: 40px">
+                                        <tr>
+                                            <td style="width: 20px; height: 20px; margin-right:5px">
+                                                <asp:Image ID="Image1" runat="server" Height="20px" Width="20px" ImageUrl='<%# Eval("KategoriResim") %>' />
+                                            </td>
+                                            <td style="width: 75px; height: 20px;  text-align: left; margin-left:5px">
+                                                <a href="kategoriDetay.aspx?Kategoriid=<%#Eval("Kategoriid") %>">
+                                                <strong>
+                                                <asp:Label ID="Label1" runat="server" BorderColor="#006666" Text='<%# Eval("KategoriAd") %>'></asp:Label>
+                                                </strong></a>
+                                            </td>
+                                        </tr>
+                                    </table>  
+                            </ItemTemplate>
+                        </asp:DataList>
+                       
+                    </div>
+                </div>
+                <div class="mybodyright">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+
+            <div class="footer"> 
+                <table >
+                    <tr>
+                        <td style="width:670px; height:60px">HAZAL YARIMDÜNYA - 2021</td>
+                        <td style="height:60px;width:370px">
+                            <div style="line-height:30px; height:26px" >
+                                <asp:Image ID="Image2" runat="server" Height="20px" ImageUrl="~/resimler/address.png" Width="23px" />
+&nbsp; Malzgirt Cad, No:1 Bulanık/Muş</div>
+                            <div style="height:30px; line-height:30px">
+                                <asp:Image ID="Image3" runat="server" Height="23px" ImageUrl="~/resimler/call.png" Width="26px" />
+&nbsp; 0212 212 121</div>
+                        </td>
+                    </tr>
+                </table>
+               </div>
+        </div>
+    </form> 
+</body>
+</html>
+
+ <%-- <div class="amazingslider-wrapper" id="amazingslider-wrapper-1" style="display:block">
+                    <div class="auto-style7" id="amazingslider-1" style="display:block;margin:0 auto;">
+                        <ul class="amazingslider-slides" style="display:none;">
+                            <asp:DataList ID="DataList2" runat="server">
+                                <ItemTemplate>
+                                     <li><img src="<%#Eval("HaberResim") %>" alt="<%#Eval("HaberAd") %>"/></li>
+                                </ItemTemplate>
+                            </asp:DataList>
+                        </ul>
+                        <ul class="amazingslider-thumbnails" style="display:none;">               
+                        </ul>
+                      <div class="amazingslider-engine"></div>
+                    </div>
+               </div>--%>
